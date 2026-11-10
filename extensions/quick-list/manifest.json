@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "local.adanotch.quick-list",
+  "name": "Quick List",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "A small to-do list on the island: type, check off, delete. Items can also be added from outside (adanotch ext …).",
+  "slots": [
+    "compact",
+    "expanded"
+  ],
+  "permissions": [],
+  "refresh": "manual",
+  "settings": [
+    {
+      "key": "hideDone",
+      "type": "toggle",
+      "label": "Hide completed items",
+      "default": false
+    }
+  ],
+  "author": "Adanotch",
+  "categories": [
+    "productivity"
+  ]
+}

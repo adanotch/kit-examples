@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "{{id}}",
+  "name": "{{name}}",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "CPU and RAM beside the notch, a one-minute chart, and a button that counts clicks.",
+  "slots": ["compact", "expanded"],
+  "permissions": ["system.stats"],
+  "refresh": "2s",
+  "settings": [{ "key": "showMemory", "type": "toggle", "label": "Show RAM", "default": true }]
+}

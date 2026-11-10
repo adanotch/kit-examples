@@ -1,0 +1,4 @@
+node_modules/
+dist/
+*.adanotchext
+.DS_Store

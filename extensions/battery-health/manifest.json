@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "local.adanotch.battery-health",
+  "name": "Battery Health",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "Battery percentage beside the notch; charging state, time left, connected devices' batteries and a one-time warning below a threshold.",
+  "slots": [
+    "compact",
+    "expanded"
+  ],
+  "permissions": [
+    "battery.read",
+    "notifications"
+  ],
+  "refresh": "30s",
+  "settings": [
+    {
+      "key": "warnPercent",
+      "type": "number",
+      "label": "Warning threshold",
+      "default": 20,
+      "unit": "%"
+    },
+    {
+      "key": "showDevices",
+      "type": "toggle",
+      "label": "Show connected devices' batteries",
+      "default": true
+    }
+  ],
+  "author": "Adanotch",
+  "categories": [
+    "system"
+  ]
+}

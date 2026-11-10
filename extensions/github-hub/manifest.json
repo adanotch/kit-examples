@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "local.adanotch.githubhub",
+  "name": "GitHub Hub",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "Review requests, PRs, issues and notifications on the island; CI status, quick approve and comment, a contribution chart.",
+  "author": "Adanotch",
+  "slots": ["compact", "expanded"],
+  "categories": ["developer"],
+  "permissions": [
+    "network:api.github.com",
+    "notifications",
+    "clipboard.read",
+    "timer.read"
+  ],
+  "refresh": "2m",
+  "settings": [
+    { "key": "token", "type": "secret", "label": "GitHub token (repo, notifications, read:user)" },
+    {
+      "key": "sections",
+      "type": "multiselect",
+      "label": "Tabs",
+      "default": ["reviews", "mine", "issues", "inbox"],
+      "options": [
+        { "value": "reviews", "label": "Reviews" },
+        { "value": "mine", "label": "My PRs" },
+        { "value": "issues", "label": "Issues" },
+        { "value": "inbox", "label": "Inbox" }
+      ]
+    },
+    { "key": "maxItems", "type": "number", "label": "Rows per tab", "default": 6, "unit": "rows" },
+    { "key": "ciChecks", "type": "toggle", "label": "Show CI status on PRs", "default": true },
+    { "key": "sound", "type": "toggle", "label": "Play a sound on a new review request", "default": true },
+    { "key": "watchClipboard", "type": "toggle", "label": "Summarize a copied GitHub link", "default": true }
+  ]
+}

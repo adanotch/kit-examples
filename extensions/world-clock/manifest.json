@@ -1,0 +1,63 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "local.adanotch.world-clock",
+  "name": "World Clock",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "The time in the cities you pick: the first beside the notch, all of them in the open card, with how many days away they are.",
+  "slots": [
+    "compact",
+    "expanded"
+  ],
+  "permissions": [],
+  "refresh": "30s",
+  "settings": [
+    {
+      "key": "cities",
+      "type": "multiselect",
+      "label": "Cities",
+      "default": [
+        "istanbul",
+        "tokyo",
+        "sao-paulo"
+      ],
+      "options": [
+        {
+          "value": "istanbul",
+          "label": "Istanbul"
+        },
+        {
+          "value": "dubai",
+          "label": "Dubai"
+        },
+        {
+          "value": "kolkata",
+          "label": "Kolkata"
+        },
+        {
+          "value": "singapore",
+          "label": "Singapore"
+        },
+        {
+          "value": "tokyo",
+          "label": "Tokyo"
+        },
+        {
+          "value": "sao-paulo",
+          "label": "São Paulo"
+        }
+      ]
+    },
+    {
+      "key": "hour12",
+      "type": "toggle",
+      "label": "12-hour clock",
+      "default": false
+    }
+  ],
+  "author": "Adanotch",
+  "categories": [
+    "utilities"
+  ]
+}

@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [extensions/battery-health, extensions/world-clock, extensions/quick-list, extensions/github-hub, template]
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Fill the template's placeholders
+        if: matrix.project == 'template'
+        run: sed -i 's/{{id}}/local.ci.template/g; s/{{name}}/Template/g; s/{{slug}}/template/g' manifest.json package.json README.md
+      - run: npm install
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

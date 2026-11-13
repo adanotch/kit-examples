@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "local.adanotch.video-downloader",
+  "name": "Video Downloader",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "A privacy-first video download queue for yt-dlp, with metadata preview, quality presets, progress and history.",
+  "slots": ["compact", "expanded"],
+  "permissions": ["clipboard.read", "clipboard.write", "notifications", "network:noembed.com"],
+  "refresh": "10s",
+  "settings": [
+    {"key":"defaultQuality","type":"select","label":"Default quality","default":"best","options":[{"value":"best","label":"Best available"},{"value":"1080","label":"Up to 1080p"},{"value":"720","label":"Up to 720p"},{"value":"audio","label":"Audio only (MP3)"}]},
+    {"key":"downloadDirectory","type":"text","label":"Download folder","default":"~/Downloads"},
+    {"key":"useCookies","type":"toggle","label":"Use browser cookies for private/age-gated videos","default":false},
+    {"key":"browser","type":"select","label":"Cookie browser","default":"Safari","options":[{"value":"Safari","label":"Safari"},{"value":"Chrome","label":"Chrome"},{"value":"Firefox","label":"Firefox"}]}
+  ],
+  "author":"Adanotch",
+  "categories":["media","productivity"]
+}

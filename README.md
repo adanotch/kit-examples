@@ -9,6 +9,7 @@ Small, working [Adanotch](https://www.adanotch.com) extensions to read, copy and
 | [`battery-health`](extensions/battery-health) | System data and events, a one-time warning notification, storage                    | `battery.read`, `notifications`                                            |
 | [`world-clock`](extensions/world-clock)       | Multiselect and toggle settings, `ui.list`, a pure module you can test with fixed times | none                                                                   |
 | [`quick-list`](extensions/quick-list)         | A text field, list rows with buttons, persistent storage, commands from outside     | none                                                                       |
+| [`mole`](extensions/mole)                     | macOS cleaner & system monitor (tw93/mole): CPU/RAM, junk cleanup, dev purge, bridge   | `system.stats`, `clipboard.write`, `notifications`                         |
 | [`github-hub`](extensions/github-hub)         | A larger extension: network with a secret token, tabs, notifications, mocked requests | `network:api.github.com`, `notifications`, `clipboard.read`, `timer.read` |
 
 Also here:

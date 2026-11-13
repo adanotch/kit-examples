@@ -1,0 +1,22 @@
+{
+  "name": "mole",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --format=iife --target=es2020 --sourcemap=inline --outfile=dist/index.js",
+    "watch": "npm run build -- --watch",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p test",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "dev": "adanotch dev",
+    "lint": "npm run build && adanotch lint",
+    "package": "npm run build && adanotch build"
+  },
+  "devDependencies": {
+    "@adanotch/kit": "^0.1.0",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

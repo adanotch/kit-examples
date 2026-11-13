@@ -1,0 +1,78 @@
+{
+  "$schema": "./node_modules/@adanotch/kit/manifest.schema.json",
+  "id": "local.adanotch.mole",
+  "name": "Mole Cleaner & Monitor",
+  "version": "0.1.0",
+  "adanotchVersion": ">=0.1.0",
+  "main": "dist/index.js",
+  "description": "macOS cleaner, optimizer and system monitor powered by Tw93 Mole (mo). Real-time CPU & RAM, disk junk detection, quick cache cleanup and project purge right at your MacBook notch.",
+  "slots": [
+    "compact",
+    "expanded"
+  ],
+  "permissions": [
+    "system.stats",
+    "clipboard.write",
+    "notifications",
+    "network:raw.githubusercontent.com"
+  ],
+  "refresh": "10s",
+  "settings": [
+    {
+      "key": "compactMode",
+      "type": "select",
+      "label": "Compact Display Mode",
+      "default": "junk",
+      "options": [
+        { "value": "junk", "label": "Cleanable Junk Size (e.g. 3.4 GB)" },
+        { "value": "ram", "label": "RAM Usage %" },
+        { "value": "cpu", "label": "CPU Usage %" },
+        { "value": "status", "label": "Mole Status Indicator" }
+      ]
+    },
+    {
+      "key": "warnThresholdGB",
+      "type": "number",
+      "label": "Alert Threshold",
+      "default": 5,
+      "unit": "GB"
+    },
+    {
+      "key": "notifyOnJunkAlert",
+      "type": "toggle",
+      "label": "Island notification when junk exceeds threshold",
+      "default": true
+    },
+    {
+      "key": "showDevPurge",
+      "type": "toggle",
+      "label": "Show Dev Purge section (node_modules, build caches)",
+      "default": true
+    },
+    {
+      "key": "terminalApp",
+      "type": "select",
+      "label": "Preferred Terminal App",
+      "default": "Terminal",
+      "options": [
+        { "value": "Terminal", "label": "macOS Terminal" },
+        { "value": "Ghostty", "label": "Ghostty" },
+        { "value": "iTerm2", "label": "iTerm2" },
+        { "value": "Warp", "label": "Warp" },
+        { "value": "Alacritty", "label": "Alacritty" }
+      ]
+    },
+    {
+      "key": "soundEffects",
+      "type": "toggle",
+      "label": "Play sound effects on cleanup and quick actions",
+      "default": true
+    }
+  ],
+  "author": "Adanotch & Tw93 Mole",
+  "categories": [
+    "system",
+    "developer",
+    "productivity"
+  ]
+}
